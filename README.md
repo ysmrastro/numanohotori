@@ -1,6 +1,6 @@
 # numanohotori.github.io
 
-天文コミュニティ「沼のほとり」の公式サイトです。
+「沼のほとり」の公式サイトです。
 
 ## サイトURL
 
@@ -20,7 +20,7 @@ bundle exec jekyll serve
 | ファイル | ページ |
 |----------|--------|
 | `index.md` | トップページ |
-| `about.md` | コミュニティ紹介 |
+| `about.md` | 沼のほとりとは |
 | `events.md` | イベント情報 |
 | `gallery.md` | 天体写真ギャラリー |
 | `contact.md` | お問い合わせ・LINE誘導 |

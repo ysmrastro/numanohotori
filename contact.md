@@ -6,7 +6,7 @@ permalink: /contact/
 
 ## LINE公式アカウント
 
-「沼のほとり」の活動情報は LINE公式アカウントで配信しています。
+「沼のほとり」の活動情報はLINE公式アカウントで配信しています。気軽に友だち追加してください。
 
 [![LINE QRコード](/assets/images/line-qr.png){: style="max-width: 200px;"}](https://lin.ee/09h9QlAb)
 
@@ -16,6 +16,6 @@ permalink: /contact/
 
 ## GitHub
 
-このサイトのソースコードは GitHub で公開しています。
+このサイトのソースコードはGitHubで公開しています。
 
 - [GitHub Organization](https://github.com/numanohotori)
