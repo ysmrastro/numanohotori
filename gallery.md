@@ -6,7 +6,13 @@ permalink: /gallery/
 
 星空の写真を紹介します。
 
-準備中です。
+## AstroBin
+
+天体写真はAstroBinで公開しています。ぜひ覗いてみてください。
+
+[![AstroBin QRコード](/assets/images/astrobin-qr.png){: style="max-width: 200px;"}](https://app.astrobin.com/u/ysmr3104)
+
+[AstroBinで写真を見る](https://app.astrobin.com/u/ysmr3104){: .btn .btn--primary .btn--large}
 
 <!-- 写真の追加方法:
 1. assets/images/ に画像を配置
