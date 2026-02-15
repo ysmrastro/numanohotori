@@ -8,6 +8,7 @@ subtitle: "天文コミュニティ"
 description: "星空を楽しむ天文コミュニティ「沼のほとり」"
 url: "https://numanohotori.github.io"
 locale: "ja-JP"
+logo: "/assets/images/logo.png"
 
 # ナビゲーション
 header_pages:

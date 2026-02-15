@@ -4,7 +4,7 @@ title: "沼のほとり"
 permalink: /
 ---
 
-# 沼のほとり
+![沼のほとり ロゴ](/assets/images/logo.png){: .align-center style="max-width: 280px; margin-bottom: 1.5em;"}
 
 **星空の沼にハマった人たちが集まる場所。**
 
