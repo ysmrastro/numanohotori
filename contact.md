@@ -8,9 +8,9 @@ permalink: /contact/
 
 「沼のほとり」の活動情報は LINE公式アカウントで配信しています。
 
-[友だち追加はこちら](#){: .btn .btn--primary .btn--large}
+[![LINE QRコード](/assets/images/line-qr.png){: style="max-width: 200px;"}](https://lin.ee/09h9QlAb)
 
-<!-- TODO: LINE公式アカウントのURLに差し替えてください -->
+[友だち追加はこちら](https://lin.ee/09h9QlAb){: .btn .btn--primary .btn--large}
 
 ---
 

@@ -23,6 +23,6 @@ permalink: /
 
 LINE公式アカウントで活動情報を配信しています。お気軽にご参加ください。
 
-[LINE公式アカウントを友だち追加する](#){: .btn .btn--primary .btn--large}
+[![LINE QRコード](/assets/images/line-qr.png){: style="max-width: 200px;"}](https://lin.ee/09h9QlAb)
 
-<!-- TODO: LINE公式アカウントのURLに差し替えてください -->
+[LINE公式アカウントを友だち追加する](https://lin.ee/09h9QlAb){: .btn .btn--primary .btn--large}
