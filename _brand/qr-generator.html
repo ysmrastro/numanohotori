@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QRコード生成ツール</title>
+  <script src="https://unpkg.com/qr-code-styling@1.8.4/lib/qr-code-styling.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+      background: #1a1a2e;
+      color: #e6edf3;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 520px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #7eb8da;
+    }
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: #8b949e;
+    }
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      background: #0d1117;
+      color: #e6edf3;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    input[type="text"]:focus, select:focus {
+      outline: none;
+      border-color: #7eb8da;
+    }
+    .file-upload {
+      margin-bottom: 1rem;
+    }
+    .file-upload-area {
+      border: 2px dashed #30363d;
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .file-upload-area:hover {
+      border-color: #7eb8da;
+    }
+    .file-upload-area.has-image {
+      border-color: #7eb8da;
+      background: rgba(126, 184, 218, 0.05);
+    }
+    .file-upload-area img {
+      max-width: 80px;
+      max-height: 80px;
+      margin-bottom: 0.5rem;
+    }
+    .file-upload-area p {
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+    input[type="file"] { display: none; }
+    .row {
+      display: flex;
+      gap: 1rem;
+    }
+    .row > div { flex: 1; }
+    .color-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .color-group input[type="color"] {
+      width: 40px;
+      height: 36px;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      background: none;
+      cursor: pointer;
+      padding: 2px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary {
+      background: #7eb8da;
+      color: #0d1117;
+      font-weight: bold;
+      width: 100%;
+      margin-bottom: 0.8rem;
+    }
+    .btn-primary:hover { background: #9dccea; }
+    .btn-secondary {
+      background: #30363d;
+      color: #e6edf3;
+      width: 100%;
+    }
+    .btn-secondary:hover { background: #3d444d; }
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .preview {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .preview canvas {
+      border-radius: 8px;
+      max-width: 100%;
+    }
+    .download-row {
+      display: flex;
+      gap: 0.8rem;
+    }
+    .download-row .btn { flex: 1; }
+    .clear-btn {
+      background: none;
+      border: none;
+      color: #8b949e;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    .clear-btn:hover { color: #e6edf3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>QRコード生成ツール</h1>
+
+    <label for="data">URL またはテキスト</label>
+    <input type="text" id="data" value="https://ysmrastro.github.io/numanohotori/" placeholder="https://example.com">
+
+    <label>中央に埋め込む画像（任意）<button class="clear-btn" id="clearImage" style="display:none">クリア</button></label>
+    <div class="file-upload">
+      <div class="file-upload-area" id="dropArea">
+        <p id="uploadText">クリックまたはドラッグ&ドロップで画像を選択</p>
+        <img id="imagePreview" style="display:none">
+      </div>
+      <input type="file" id="imageInput" accept="image/*">
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="size">サイズ (px)</label>
+        <input type="number" id="size" value="1000" min="200" max="4000" step="100">
+      </div>
+      <div>
+        <label for="margin">余白 (px)</label>
+        <input type="number" id="margin" value="20" min="0" max="100">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="errorCorrection">誤り訂正レベル</label>
+        <select id="errorCorrection">
+          <option value="L">L（7%）</option>
+          <option value="M">M（15%）</option>
+          <option value="Q" selected>Q（25%）</option>
+          <option value="H">H（30%）</option>
+        </select>
+      </div>
+      <div>
+        <label for="dotStyle">ドットスタイル</label>
+        <select id="dotStyle">
+          <option value="square">四角</option>
+          <option value="dots">丸</option>
+          <option value="rounded" selected>角丸</option>
+          <option value="extra-rounded">大角丸</option>
+          <option value="classy">クラシック</option>
+          <option value="classy-rounded">クラシック角丸</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <div class="color-group">
+          <label for="dotColor" style="margin:0">ドット色</label>
+          <input type="color" id="dotColor" value="#000000">
+        </div>
+      </div>
+      <div>
+        <div class="color-group">
+          <label for="bgColor" style="margin:0">背景色</label>
+          <input type="color" id="bgColor" value="#ffffff">
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" id="generateBtn">QRコードを生成</button>
+
+    <div class="preview" id="preview"></div>
+
+    <div class="download-row">
+      <button class="btn btn-secondary" id="downloadPng" disabled>PNG ダウンロード</button>
+      <button class="btn btn-secondary" id="downloadSvg" disabled>SVG ダウンロード</button>
+    </div>
+  </div>
+
+  <script>
+    const dataInput = document.getElementById('data');
+    const imageInput = document.getElementById('imageInput');
+    const dropArea = document.getElementById('dropArea');
+    const imagePreview = document.getElementById('imagePreview');
+    const uploadText = document.getElementById('uploadText');
+    const clearImage = document.getElementById('clearImage');
+    const generateBtn = document.getElementById('generateBtn');
+    const downloadPng = document.getElementById('downloadPng');
+    const downloadSvg = document.getElementById('downloadSvg');
+    const preview = document.getElementById('preview');
+
+    let uploadedImage = null;
+    let qrCode = null;
+
+    // 画像アップロード
+    dropArea.addEventListener('click', () => imageInput.click());
+    dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.style.borderColor = '#7eb8da'; });
+    dropArea.addEventListener('dragleave', () => { dropArea.style.borderColor = uploadedImage ? '#7eb8da' : '#30363d'; });
+    dropArea.addEventListener('drop', e => {
+      e.preventDefault();
+      if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+    });
+    imageInput.addEventListener('change', e => {
+      if (e.target.files.length) handleFile(e.target.files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        uploadedImage = e.target.result;
+        imagePreview.src = uploadedImage;
+        imagePreview.style.display = 'block';
+        uploadText.textContent = file.name;
+        dropArea.classList.add('has-image');
+        clearImage.style.display = 'inline';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    clearImage.addEventListener('click', e => {
+      e.stopPropagation();
+      uploadedImage = null;
+      imageInput.value = '';
+      imagePreview.style.display = 'none';
+      uploadText.textContent = 'クリックまたはドラッグ&ドロップで画像を選択';
+      dropArea.classList.remove('has-image');
+      clearImage.style.display = 'none';
+    });
+
+    // QRコード生成
+    generateBtn.addEventListener('click', generate);
+
+    function generate() {
+      const data = dataInput.value.trim();
+      if (!data) { alert('URLまたはテキストを入力してください'); return; }
+
+      preview.innerHTML = '';
+
+      const options = {
+        width: parseInt(document.getElementById('size').value),
+        height: parseInt(document.getElementById('size').value),
+        margin: parseInt(document.getElementById('margin').value),
+        data: data,
+        dotsOptions: {
+          color: document.getElementById('dotColor').value,
+          type: document.getElementById('dotStyle').value
+        },
+        backgroundOptions: {
+          color: document.getElementById('bgColor').value
+        },
+        cornersSquareOptions: {
+          type: 'extra-rounded'
+        },
+        qrOptions: {
+          errorCorrectionLevel: document.getElementById('errorCorrection').value
+        }
+      };
+
+      if (uploadedImage) {
+        options.image = uploadedImage;
+        options.imageOptions = {
+          crossOrigin: 'anonymous',
+          margin: 8,
+          imageSize: 0.35,
+          hideBackgroundDots: true
+        };
+      }
+
+      qrCode = new QRCodeStyling(options);
+      qrCode.append(preview);
+
+      downloadPng.disabled = false;
+      downloadSvg.disabled = false;
+    }
+
+    downloadPng.addEventListener('click', () => {
+      if (qrCode) qrCode.download({ name: 'qrcode', extension: 'png' });
+    });
+    downloadSvg.addEventListener('click', () => {
+      if (qrCode) qrCode.download({ name: 'qrcode', extension: 'svg' });
+    });
+
+    // 初期生成
+    generate();
+  </script>
+</body>
+</html>
