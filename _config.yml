@@ -6,7 +6,8 @@ minimal_mistakes_skin: "dark"
 title: "沼のほとり"
 subtitle: "ASTRONOMY FAN"
 description: "星空をゆるく楽しむ「沼のほとり」"
-url: "https://numanohotori.github.io"
+url: "https://ysmrastro.github.io"
+baseurl: "/numanohotori"
 locale: "ja-JP"
 logo: "/assets/images/logo.png"
 
@@ -37,4 +38,4 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/numanohotori"
+      url: "https://github.com/ysmrastro"

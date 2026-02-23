@@ -10,4 +10,4 @@
 | `logo.png` | 沼のほとり ロゴ（オリジナル） |
 | `line-qr/緑/` | LINE公式アカウント QRコード（緑・S/M/L） |
 | `line-qr/黒/` | LINE公式アカウント QRコード（黒・S/M/L） |
-| `site-link-qr.jpg` | サイトURL QRコード（ロゴ入り、リンク先: numanohotori.github.io） |
+| `site-link-qr.jpg` | サイトURL QRコード（ロゴ入り、リンク先: ysmrastro.github.io/numanohotori/） |

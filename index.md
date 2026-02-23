@@ -4,7 +4,7 @@ title: "沼のほとり"
 permalink: /
 ---
 
-![沼のほとり ロゴ](/assets/images/logo.png){: .align-center style="max-width: 280px; margin-bottom: 1.5em;"}
+![沼のほとり ロゴ]({{ site.baseurl }}/assets/images/logo.png){: .align-center style="max-width: 280px; margin-bottom: 1.5em;"}
 
 **星空が好き。それだけで十分です。**
 
@@ -25,7 +25,7 @@ permalink: /
 - **場所**: 福岡市美術館 ギャラリーB
 - **住所**: 福岡県福岡市中央区大濠公園1-6
 
-[![星空写真展「星の声」案内](/assets/images/hoshi-no-koe-flyer.jpg){: style="max-width: 480px;"}](/events/)
+[![星空写真展「星の声」案内]({{ site.baseurl }}/assets/images/hoshi-no-koe-flyer.jpg){: style="max-width: 480px;"}]({{ site.baseurl }}/events/)
 
 **図録も予約販売中！** → [購入はこちら](https://onitakuphoto.base.shop/items/134615820)
 
@@ -53,6 +53,6 @@ permalink: /
 LINE公式アカウントをフォローして、最新の天文情報を受け取ろう！
 （LINEかInstagramでメッセージ貰えればお返事します）
 
-[![LINE QRコード](/assets/images/line-qr.png){: style="max-width: 200px;"}](https://lin.ee/09h9QlAb)
+[![LINE QRコード]({{ site.baseurl }}/assets/images/line-qr.png){: style="max-width: 200px;"}](https://lin.ee/09h9QlAb)
 
 [LINE公式アカウントを友だち追加する](https://lin.ee/09h9QlAb){: .btn .btn--primary .btn--large}

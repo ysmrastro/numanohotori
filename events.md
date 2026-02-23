@@ -15,15 +15,15 @@ permalink: /events/
 - **場所**: 福岡市美術館 ギャラリーB
 - **住所**: 福岡県福岡市中央区大濠公園1-6
 
-![星空写真展「星の声」案内](/assets/images/hoshi-no-koe-flyer.jpg){: style="max-width: 600px;"}
+![星空写真展「星の声」案内]({{ site.baseurl }}/assets/images/hoshi-no-koe-flyer.jpg){: style="max-width: 600px;"}
 
 #### 図録販売のお知らせ
 
 星空写真展「星の声」の図録を販売します！予約販売受付中です。
 
-![図録イメージ（中面）](/assets/images/hoshi-no-koe-zuroku-1.jpg){: style="max-width: 480px;"}
+![図録イメージ（中面）]({{ site.baseurl }}/assets/images/hoshi-no-koe-zuroku-1.jpg){: style="max-width: 480px;"}
 
-![図録イメージ（表紙）](/assets/images/hoshi-no-koe-zuroku-2.jpg){: style="max-width: 480px;"}
+![図録イメージ（表紙）]({{ site.baseurl }}/assets/images/hoshi-no-koe-zuroku-2.jpg){: style="max-width: 480px;"}
 
 [図録を購入する](https://onitakuphoto.base.shop/items/134615820){: .btn .btn--primary .btn--large}
 

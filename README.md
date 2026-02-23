@@ -1,10 +1,10 @@
-# numanohotori.github.io
+# numanohotori
 
 「沼のほとり」の公式サイトです。
 
 ## サイトURL
 
-https://numanohotori.github.io
+https://ysmrastro.github.io/numanohotori/
 
 ## ローカルでの確認方法
 
@@ -13,7 +13,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-ブラウザで http://localhost:4000 にアクセスしてください。
+ブラウザで http://localhost:4000/numanohotori/ にアクセスしてください。
 
 ## ページ構成
 

@@ -10,7 +10,7 @@ permalink: /gallery/
 
 天体写真はAstroBinで公開しています。ぜひ覗いてみてください。
 
-[![AstroBin QRコード](/assets/images/astrobin-qr.png){: style="max-width: 200px;"}](https://app.astrobin.com/u/ysmr3104){:target="_blank"}
+[![AstroBin QRコード]({{ site.baseurl }}/assets/images/astrobin-qr.png){: style="max-width: 200px;"}](https://app.astrobin.com/u/ysmr3104){:target="_blank"}
 
 [AstroBinで写真を見る](https://app.astrobin.com/u/ysmr3104){: .btn .btn--primary .btn--large target="_blank"}
 

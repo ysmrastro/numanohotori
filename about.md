@@ -28,4 +28,4 @@ permalink: /about/
 経験や機材の有無は問いません。星空に興味がある方なら誰でも歓迎です。
 むしろ「ちょっと気になる」くらいがちょうどいい。
 
-[お問い合わせはこちら](/contact/){: .btn .btn--info}
+[お問い合わせはこちら]({{ site.baseurl }}/contact/){: .btn .btn--info}
