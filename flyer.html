@@ -84,7 +84,7 @@ permalink: /flyer/
     }
 
     .content-right {
-      width: 70mm;
+      width: 80mm;
       flex-shrink: 0;
     }
 
@@ -156,18 +156,41 @@ permalink: /flyer/
       gap: 8mm;
     }
 
-    .qr-item {
+    .qr-main {
       text-align: center;
     }
 
-    .qr-item img {
-      width: 32mm;
-      height: 32mm;
+    .qr-main img {
+      width: 60mm;
+      height: 60mm;
+      object-fit: contain;
+    }
+
+    .qr-main .qr-label {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 2mm;
+      color: #7eb8da;
+    }
+
+    .qr-sub-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3mm;
+    }
+
+    .qr-sub {
+      text-align: center;
+    }
+
+    .qr-sub img {
+      width: 22mm;
+      height: 22mm;
       object-fit: contain;
     }
 
     .qr-label {
-      font-size: 9pt;
+      font-size: 8pt;
       margin-top: 1mm;
       color: #7eb8da;
     }
@@ -229,21 +252,23 @@ permalink: /flyer/
   <!-- フッター: QRコード -->
   <div class="footer">
     <div class="qr-section">
-      <div class="qr-item">
-        <img src="{{ site.baseurl }}/assets/images/site-link-qr.jpg" alt="サイトQRコード">
-        <div class="qr-label">Webサイト</div>
-      </div>
-      <div class="qr-item">
+      <div class="qr-main">
         <img src="{{ site.baseurl }}/assets/images/line-qr.png" alt="LINE QRコード">
         <div class="qr-label">LINE 友だち追加</div>
       </div>
-      <div class="qr-item">
-        <img src="{{ site.baseurl }}/assets/images/instagram-qr.png" alt="Instagram QRコード">
-        <div class="qr-label">Instagram</div>
-      </div>
-      <div class="qr-item">
-        <img src="{{ site.baseurl }}/assets/images/astrobin-qr.png" alt="AstroBin QRコード">
-        <div class="qr-label">AstroBin</div>
+      <div class="qr-sub-group">
+        <div class="qr-sub">
+          <img src="{{ site.baseurl }}/assets/images/site-link-qr.jpg" alt="サイトQRコード">
+          <div class="qr-label">Webサイト</div>
+        </div>
+        <div class="qr-sub">
+          <img src="{{ site.baseurl }}/assets/images/instagram-qr.png" alt="Instagram QRコード">
+          <div class="qr-label">Instagram</div>
+        </div>
+        <div class="qr-sub">
+          <img src="{{ site.baseurl }}/assets/images/astrobin-qr.png" alt="AstroBin QRコード">
+          <div class="qr-label">AstroBin</div>
+        </div>
       </div>
     </div>
     <div class="url">https://ysmrastro.github.io/numanohotori/</div>
