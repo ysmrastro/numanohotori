@@ -50,9 +50,9 @@ permalink: /
 
 ## 遊びに来ませんか？
 
-LINE公式アカウントをフォローして、最新の天文情報を受け取ろう！
-（LINEかInstagramでメッセージ貰えればお返事します）
+写真展の期間中はInstagramからメッセージください！
+最新の天体写真もこちらで発信しています。
 
-[![LINE QRコード]({{ site.baseurl }}/assets/images/line-qr.png){: style="max-width: 200px;"}](https://lin.ee/09h9QlAb)
+[![Instagram QRコード]({{ site.baseurl }}/assets/images/instagram-qr.png){: style="max-width: 200px;"}](https://www.instagram.com/ysmr3104/)
 
-[LINE公式アカウントを友だち追加する](https://lin.ee/09h9QlAb){: .btn .btn--primary .btn--large}
+[Instagramをフォローする](https://www.instagram.com/ysmr3104/){: .btn .btn--primary .btn--large}
