@@ -14,23 +14,6 @@ permalink: /
 
 ---
 
-## お知らせ
-
-### 星空写真展「星の声」に出展します
-
-福岡の星撮り仲間とグループ写真展を開催します。ぜひお越しください！
-
-- **日程**: 2026年4月28日（火）〜 5月6日（水）
-- **時間**: 9:30〜17:30（最終日15:00まで）
-- **場所**: 福岡市美術館 ギャラリーB
-- **住所**: 福岡県福岡市中央区大濠公園1-6
-
-[![星空写真展「星の声」案内]({{ site.baseurl }}/assets/images/hoshi-no-koe-flyer.jpg){: style="max-width: 480px;"}]({{ site.baseurl }}/events/)
-
-**図録も予約販売中！** → [購入はこちら](https://onitakuphoto.base.shop/items/134615820)
-
----
-
 ## 発起人（さとし）の活動情報をLINEで配信します
 
 - 普段の小石原ダムでの星見の予定
@@ -50,9 +33,8 @@ permalink: /
 
 ## 遊びに来ませんか？
 
-写真展の期間中はInstagramからメッセージください！
-最新の天体写真もこちらで発信しています。
+LINEかInstagramでお気軽にどうぞ！メッセージ貰えればお返事します。
 
-[![Instagram QRコード]({{ site.baseurl }}/assets/images/instagram-qr.png){: style="max-width: 200px;"}](https://www.instagram.com/ysmr3104/)
-
-[Instagramをフォローする](https://www.instagram.com/ysmr3104/){: .btn .btn--primary .btn--large}
+| [![LINE QRコード]({{ site.baseurl }}/assets/images/line-qr.png){: style="max-width: 180px;"}](https://lin.ee/09h9QlAb) | [![Instagram QRコード]({{ site.baseurl }}/assets/images/instagram-qr.png){: style="max-width: 180px;"}](https://www.instagram.com/ysmr3104/) |
+|:---:|:---:|
+| [LINE公式アカウントを友だち追加する](https://lin.ee/09h9QlAb){: .btn .btn--primary} | [Instagramを見る](https://www.instagram.com/ysmr3104/){: .btn .btn--primary} |
