@@ -6,13 +6,16 @@
 # - 終了したイベントは自動で表示されなくなる（ファイルから消さなくてOK）
 #   詳しい開催レポートを残したい場合は events.md の「過去のイベント」に書く
 #
-# 書式（end_date・place・summary・url は省略可）:
+# 書式（end_date・place・summary・url・image は省略可）:
 # - title: "イベント名"
 #   start_date: 2026-07-01   # 開始日
 #   end_date: 2026-07-07     # 終了日（1日だけなら省略）
 #   place: "開催場所"
 #   summary: "1〜2文の紹介文"
-#   url: https://example.com/  # 詳細ページがあれば
+#   url: https://example.com/  # 詳細ページがあれば（画像・タイトルのリンク先になる）
+#   image: https://example.com/flyer.jpg  # カードに表示する画像
+#     # 外部URL（http〜）でも、サイト内画像（/assets/images/xxx.jpg）でもOK
+#     # url があれば画像をクリックでそのページへ移動できる
 
 - title: "星宴2026 in 阿蘇・うぶやま村"
   start_date: 2026-10-10
@@ -20,6 +23,7 @@
   place: "ファームビレッジ産山・うぶやま天文台（熊本県阿蘇郡産山村）"
   summary: "天文ハウスTOMITA主催、九州発の星まつり。望遠鏡の持ち寄り大歓迎、手ぶら参加もOK。オールナイト開催を検討中。"
   url: https://www.astroshop-tomita.com/post/seien2026kaisaibi
+  image: https://static.wixstatic.com/media/c51093_38a09d1d699149689d20d5a78dc02de8~mv2.png/v1/fill/w_704,h_594,al_c,q_90,enc_avif,quality_auto/c51093_38a09d1d699149689d20d5a78dc02de8~mv2.png
 
 - title: "星空写真展「星の声」"
   start_date: 2026-04-28

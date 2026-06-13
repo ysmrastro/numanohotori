@@ -21,10 +21,16 @@
 <div class="event-cards">
 {% for ev in ue_events limit: ue_limit %}
 <div class="event-card">
+{% if ev.image %}
+  {% if ev.image contains "://" %}{% assign ue_img = ev.image %}{% else %}{% assign ue_img = ev.image | prepend: site.baseurl %}{% endif %}
+  {% if ev.url %}<a class="event-card__image-link" href="{{ ev.url }}"{% if ev.url contains "://" %} target="_blank" rel="noopener"{% endif %}><img class="event-card__image" src="{{ ue_img }}" alt="{{ ev.title }}" loading="lazy"></a>{% else %}<img class="event-card__image" src="{{ ue_img }}" alt="{{ ev.title }}" loading="lazy">{% endif %}
+{% endif %}
+<div class="event-card__body">
 <p class="event-card__date">{% if ev.end_date and ev.end_date != ev.start_date %}{{ ev.start_date | date: "%Y年%-m月%-d日" }}〜 {{ ev.end_date | date: "%-m月%-d日" }}{% else %}{{ ev.start_date | date: "%Y年%-m月%-d日" }}{% endif %}</p>
-<p class="event-card__title">{% if ev.url %}<a href="{{ ev.url }}">{{ ev.title }}</a>{% else %}{{ ev.title }}{% endif %}</p>
+<p class="event-card__title">{% if ev.url %}<a href="{{ ev.url }}"{% if ev.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ ev.title }}</a>{% else %}{{ ev.title }}{% endif %}</p>
 {% if ev.place %}<p class="event-card__place">{{ ev.place }}</p>{% endif %}
 {% if ev.summary %}<p class="event-card__summary">{{ ev.summary }}</p>{% endif %}
+</div>
 </div>
 {% endfor %}
 </div>
