@@ -12,7 +12,7 @@ require "time"
 
 FEED_URL = "https://note.com/ysmr3104astro/rss"
 OUTPUT_PATH = File.expand_path("../_data/note_posts.yml", __dir__)
-MAX_POSTS = 6
+MAX_POSTS = 2
 
 def fetch(url, limit = 3)
   raise "リダイレクトが多すぎます" if limit.zero?
