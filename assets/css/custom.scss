@@ -21,6 +21,48 @@ a {
   }
 }
 
+/* イベントカード */
+.event-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+.event-card {
+  background-color: #161b22;
+  border: 1px solid #1a2332;
+  border-radius: 8px;
+  padding: 0.9em 1.1em;
+
+  &__date {
+    margin: 0 0 0.3em;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #7eb8da;
+  }
+
+  &__title {
+    margin: 0 0 0.3em;
+    font-size: 0.95em;
+    font-weight: bold;
+    color: #e6edf3;
+  }
+
+  &__place {
+    margin: 0 0 0.3em;
+    font-size: 0.75em;
+    color: #8b949e;
+  }
+
+  &__summary {
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.5;
+    color: #c9d1d9;
+  }
+}
+
 /* トップページ: note記事カード */
 .note-posts-grid {
   display: grid;

@@ -1,0 +1,33 @@
+{% comment %}
+今後のイベント（終了日が今日以降）を開催日順に表示する。
+パラメータ:
+  limit         — 表示件数の上限（省略時は全件）
+  heading       — 1件以上あるときに表示する見出し（省略可）
+  empty_message — 0件のときに表示する文言（省略時は何も出さない）
+{% endcomment %}
+{% assign ue_today = site.time | date: "%Y-%m-%d" %}
+{% assign ue_events = "" | split: "" %}
+{% for ue_ev in site.data.events %}
+  {% assign ue_end = ue_ev.end_date | default: ue_ev.start_date %}
+  {% assign ue_end_s = ue_end | date: "%Y-%m-%d" %}
+  {% if ue_end_s >= ue_today %}
+    {% assign ue_events = ue_events | push: ue_ev %}
+  {% endif %}
+{% endfor %}
+{% assign ue_events = ue_events | sort: "start_date" %}
+{% assign ue_limit = include.limit | default: 100 %}
+{% if ue_events.size > 0 %}
+{% if include.heading %}<h3 class="archive__subtitle">{{ include.heading }}</h3>{% endif %}
+<div class="event-cards">
+{% for ev in ue_events limit: ue_limit %}
+<div class="event-card">
+<p class="event-card__date">{% if ev.end_date and ev.end_date != ev.start_date %}{{ ev.start_date | date: "%Y年%-m月%-d日" }}〜 {{ ev.end_date | date: "%-m月%-d日" }}{% else %}{{ ev.start_date | date: "%Y年%-m月%-d日" }}{% endif %}</p>
+<p class="event-card__title">{% if ev.url %}<a href="{{ ev.url }}">{{ ev.title }}</a>{% else %}{{ ev.title }}{% endif %}</p>
+{% if ev.place %}<p class="event-card__place">{{ ev.place }}</p>{% endif %}
+{% if ev.summary %}<p class="event-card__summary">{{ ev.summary }}</p>{% endif %}
+</div>
+{% endfor %}
+</div>
+{% elsif include.empty_message %}
+<p>{{ include.empty_message }}</p>
+{% endif %}

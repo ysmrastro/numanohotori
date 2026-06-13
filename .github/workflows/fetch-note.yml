@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   fetch:
@@ -28,3 +29,10 @@ jobs:
           else
             echo "新しい記事はありませんでした"
           fi
+
+      # イベント表示の「今後/過去」判定はビルド時の日付で決まるため、
+      # 記事の有無にかかわらず毎日Pagesを再ビルドして判定を最新に保つ
+      - name: Pagesを再ビルド
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
+        env:
+          GH_TOKEN: ${{ github.token }}

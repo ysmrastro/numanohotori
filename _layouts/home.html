@@ -4,12 +4,14 @@ layout: archive
 
 {{ content }}
 
+{% include upcoming-events.html limit=2 heading="直近のイベント" %}
+
 {% assign note_posts = site.data.note_posts %}
 {% if note_posts and note_posts.size > 0 %}
 <h3 class="archive__subtitle">最新のnote記事</h3>
 
 <div class="note-posts-grid">
-  {% for post in note_posts limit: 6 %}
+  {% for post in note_posts limit: 2 %}
   <a class="note-post-card" href="{{ post.url }}" target="_blank" rel="noopener">
     {% if post.thumbnail %}
     <img class="note-post-card__thumb" src="{{ post.thumbnail }}" alt="" loading="lazy">

@@ -6,7 +6,7 @@ permalink: /events/
 
 ## 今後のイベント
 
-現在予定しているイベントはありません。
+{% include upcoming-events.html empty_message="現在予定しているイベントはありません。" %}
 
 ---
 
