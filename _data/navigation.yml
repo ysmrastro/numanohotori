@@ -7,5 +7,7 @@ main:
     url: /events/
   - title: "ギャラリー"
     url: /gallery/
+  - title: "note"
+    url: https://note.com/ysmr3104astro
   - title: "お問い合わせ"
     url: /contact/
