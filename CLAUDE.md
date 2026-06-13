@@ -51,6 +51,8 @@ bundle exec jekyll serve  # ローカルプレビュー → http://localhost:400
 
 mainブランチへのpushでGitHub Pagesが自動ビルド・デプロイ。
 
+**Cowork環境の場合**: Cowork（Desktopアプリ）のサンドボックスからはGitHubへのpush認証が通らないため、pushはできない。ブランチ作成やコミットまでを実施し、pushはユーザーに依頼すること（例: `cd ~/projects/numanohotori && git push origin main` をユーザー自身のターミナルで実行してもらう）。
+
 ## コンテンツ編集時の注意
 
 - Minimal Mistakesのクラス記法を使用: `{: .btn .btn--primary}`, `{: .align-center}`, `{: .notice}` 等
