@@ -1,0 +1,28 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign note_posts = site.data.note_posts %}
+{% if note_posts and note_posts.size > 0 %}
+<h3 class="archive__subtitle">最新のnote記事</h3>
+
+<div class="note-posts-grid">
+  {% for post in note_posts limit: 6 %}
+  <a class="note-post-card" href="{{ post.url }}" target="_blank" rel="noopener">
+    {% if post.thumbnail %}
+    <img class="note-post-card__thumb" src="{{ post.thumbnail }}" alt="" loading="lazy">
+    {% endif %}
+    <div class="note-post-card__body">
+      <p class="note-post-card__title">{{ post.title }}</p>
+      <p class="note-post-card__date">{{ post.date }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<p class="note-posts-more">
+  <a href="https://note.com/ysmr3104astro" class="btn btn--primary" target="_blank" rel="noopener">noteで記事一覧を見る</a>
+</p>
+{% endif %}
